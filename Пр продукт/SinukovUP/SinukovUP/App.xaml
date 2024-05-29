@@ -1,0 +1,245 @@
+﻿<Application
+    x:Class="SinukovUP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SinukovUP"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--  Стиль для основной панели окна  -->
+        <Style x:Key="MainWindowPlace_sytle" TargetType="Grid">
+            <Setter Property="Grid.Row" Value="0" />
+            <Setter Property="Background" Value="#416e5e" />
+        </Style>
+
+        <!--  Стиль для нижней панели окна  -->
+        <Style x:Key="BottomWindowPlace_style" TargetType="Grid">
+            <Setter Property="Grid.Row" Value="1" />
+            <Setter Property="Background" Value="#298a66" />
+        </Style>
+
+        <!--  Стиль для StackPanel на окнах ргеисрации  -->
+        <Style x:Key="mainWindowStackPanal_style" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+
+        <!--  Стиль для области кнопок всплывающей  -->
+        <Style x:Key="setingsPlace_style" TargetType="Grid">
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Width" Value="250" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+        <!--  Стиль для маленькой кнопки настроек  -->
+        <Style x:Key="settingsSmallBottomBtn_style" TargetType="Button">
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Margin" Value="15,0" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+
+        <!--  Стиль для кнопок настроек  -->
+        <Style x:Key="settingsBtn_style" TargetType="Button">
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Background" Value="#0e3b1b" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    AutoReverse="True"
+                                    Storyboard.TargetProperty="Background.Color"
+                                    From="#527f5f"
+                                    To="#527f72"
+                                    Duration="0:0:0.2" />
+
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <!--  Тригер - менять цвет при наведении курсора  -->
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    AutoReverse="False"
+                                    Storyboard.TargetProperty="Background.Color"
+                                    From="#0e3b1b"
+                                    To="#527f5f"
+                                    Duration="0:0:0.5" />
+
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <!--  Тригер при отведении курсора - возвращать прежний цвет  -->
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    AutoReverse="False"
+                                    Storyboard.TargetProperty="Background.Color"
+                                    From="#527f5f"
+                                    To="#0e3b1b"
+                                    Duration="0:0:0.5" />
+
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <!--  Стиль для заглавного текста в окнах  -->
+        <Style x:Key="TitleWindowText_style" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="Margin" Value="0,0,0,20" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <!--  Стиль для обычного текста в окнах  -->
+        <Style x:Key="normalHelpText_style" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Margin" Value="20,5" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <!--  Стиль для ввода текста  -->
+        <Style x:Key="usualyTextInpyt_style" TargetType="TextBox">
+            <Setter Property="Background" Value="#325448" />
+            <Setter Property="Margin" Value="20,0" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <!--  Стиль для ComboBox  -->
+        <Style x:Key="comboBoxRole_style" TargetType="ComboBox">
+            <Setter Property="Width" Value="260" />
+        </Style>
+
+        <!--  Стиль для кнопки регистрации и авторизации  -->
+        <Style x:Key="RegAuthBtn_style" TargetType="Button">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Background" Value="#2683ab" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="0,70" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    AutoReverse="True"
+                                    Storyboard.TargetProperty="Background.Color"
+                                    From="#09b325"
+                                    To="#3cb55e"
+                                    Duration="0:0:0.2" />
+
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <!--  Тригер - менять цвет при наведении курсора  -->
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    AutoReverse="False"
+                                    Storyboard.TargetProperty="Background.Color"
+                                    From="#2683ab"
+                                    To="#09b325"
+                                    Duration="0:0:0.5" />
+
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <!--  Тригер при отведении курсора - возвращать прежний цвет  -->
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    AutoReverse="False"
+                                    Storyboard.TargetProperty="Background.Color"
+                                    From="#09b325"
+                                    To="#2683ab"
+                                    Duration="0:0:0.5" />
+
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Application.Resources>
+</Application>
