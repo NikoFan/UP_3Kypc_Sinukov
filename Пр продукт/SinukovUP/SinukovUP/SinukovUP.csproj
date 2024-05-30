@@ -159,9 +159,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClientAccountWindow.xaml.cs">
+      <DependentUpon>ClientAccountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClientMyApplications.xaml.cs">
+      <DependentUpon>ClientMyApplications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateApplication.xaml.cs">
+      <DependentUpon>CreateApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerAccountWindow.xaml.cs">
+      <DependentUpon>ManagerAccountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerApplications.xaml.cs">
+      <DependentUpon>ManagerApplications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAccountWindow.xaml.cs">
+      <DependentUpon>MasterAccountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterApplications.xaml.cs">
+      <DependentUpon>MasterApplications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorAccountWindow.xaml.cs">
+      <DependentUpon>OperatorAccountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorApplications.xaml.cs">
+      <DependentUpon>OperatorApplications.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ClientAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClientMyApplications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -177,6 +216,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerApplications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MasterAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MasterApplications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperatorAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperatorApplications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -82,6 +82,9 @@ namespace SinukovUP
                 // Если информаци корректна
                 new DB().addNewAccount(informationToRegistration);
                 new Helps().createInformationMessageBox("Пользователь зарегистрирован!");
+                // Открытие аккаунта пользователя (в зависимости от его роли)
+                new Helps().openUserAccounts(roleSelect.Text.ToString());
+                this.Visibility = Visibility.Hidden;
                 return;
             }
             new Helps().createInformationMessageBox("Проверьте введенные данные! Помните:\nТелефон: 8xxxxxxxxxx\nПароль до 15 символов");

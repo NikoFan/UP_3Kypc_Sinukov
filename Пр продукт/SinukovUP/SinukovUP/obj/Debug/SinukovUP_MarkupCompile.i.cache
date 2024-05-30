@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Олег\Desktop\УП Синюков\Пр продукт\SinukovUP\SinukovUP\obj\Debug\
+C:\Users\Олег\Desktop\УП Синюков\UP_3Kypc_Sinukov\Пр продукт\SinukovUP\SinukovUP\obj\Debug\
 SinukovUP
 none
 false
 DEBUG;TRACE
-C:\Users\Олег\Desktop\УП Синюков\Пр продукт\SinukovUP\SinukovUP\App.xaml
-2-1163224183
+C:\Users\Олег\Desktop\УП Синюков\UP_3Kypc_Sinukov\Пр продукт\SinukovUP\SinukovUP\App.xaml
+111107638727
 
-112094330662
-54-1382858254
-MainWindow.xaml;SignInWindow.xaml;
+20928125288
+541001279552
+ClientAccountWindow.xaml;ClientMyApplications.xaml;CreateApplication.xaml;MainWindow.xaml;ManagerAccountWindow.xaml;ManagerApplications.xaml;MasterAccountWindow.xaml;MasterApplications.xaml;OperatorAccountWindow.xaml;OperatorApplications.xaml;SignInWindow.xaml;
 
 True
 

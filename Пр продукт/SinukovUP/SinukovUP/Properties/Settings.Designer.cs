@@ -46,5 +46,17 @@ namespace SinukovUP.Properties {
                 this["userROLE"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string appID {
+            get {
+                return ((string)(this["appID"]));
+            }
+            set {
+                this["appID"] = value;
+            }
+        }
     }
 }

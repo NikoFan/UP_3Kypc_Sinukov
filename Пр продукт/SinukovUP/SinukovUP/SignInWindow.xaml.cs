@@ -54,8 +54,19 @@ namespace SinukovUP
                 new Helps().exitApp();
         }
 
+        private void OpenRegistrationWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow()
+            {
+                Top = Top,
+                Left = Left
+            };
 
+            mainWindow.Show();
+            this.Visibility = Visibility.Hidden;
+        }
 
+        // Авторизация пользователя
         private void StartAuthUserAccount(object sender, RoutedEventArgs e)
         {
             string[] informationToAuthorization = new string[3]{
@@ -67,12 +78,19 @@ namespace SinukovUP
             if (checkData(informationToAuthorization))
             {
                 // Если информаци корректна
-                new DB().SignInAccount(informationToAuthorization);
-                // Открытие окна акаунта
-                return;
+                if (new DB().SignInAccount(informationToAuthorization))
+                {
+                    new Helps().openUserAccounts(roleSelect.Text.ToString());
+                    this.Visibility = Visibility.Hidden;
+                    return;
+                }
+
+                
             }
             new Helps().createInformationMessageBox("Проверьте введенные данные!");
         }
+
+
 
         private bool checkData(string[] inputDataToCheck)
         {

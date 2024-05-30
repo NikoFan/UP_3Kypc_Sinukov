@@ -29,5 +29,17 @@ namespace SinukovUP
         // Возврат роли пользователя
         public string getUserROLE() => Settings.Default["UserROLE"].ToString();
 
+
+
+        // Запись выбраной для демонстрации заявки
+        public void setAppID(string ID)
+        {
+            Settings.Default["appID"] = ID;
+            Settings.Default.Save();
+        }
+
+        // Возврат выбраной для демонстрации заявки
+        public string getAppID() => Settings.Default["appID"].ToString();
+
     }
 }

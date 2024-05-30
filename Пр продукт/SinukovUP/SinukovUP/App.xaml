@@ -241,5 +241,25 @@
                 </EventTrigger>
             </Style.Triggers>
         </Style>
+
+        <!--  Стиль для маленького текста  -->
+        <Style x:Key="InformationText_style" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Margin" Value="10,0" />
+        </Style>
+
+
+        <!--  Стиль для ввода текста в заявке  -->
+        <Style x:Key="ApplicationInfoTExtInput_style" TargetType="TextBox">
+            <Setter Property="Height" Value="60" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <!--  Стиль для ScrollViewer  -->
+        <Style x:Key="ApplicationView_style" TargetType="ScrollViewer">
+            <Setter Property="Height" Value="480" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
     </Application.Resources>
 </Application>
